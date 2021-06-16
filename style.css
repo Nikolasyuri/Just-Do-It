@@ -8,49 +8,67 @@
 /* Header */
 .Header-Content .max-width{
     display: flex;
-    align-items: center;
-    width: 100%;
-    box-shadow: 0px 5px 7px 3px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    box-shadow: 0px 5px 6px #888888
 }
-.Header-Content .left-side{
+.Header-Content .max-width .left-side{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 24%;
+    padding: 20px 15px 7px 20px;
     background-color: #F1FAF0;
-    width: 30%;
-    padding: 20px;
-    height: 50px;
 }
-.Header-Content .left-side img{
-    margin-left: 20px;
-    width: 68px;
-    height: 68px;
+.Header-Content .max-width .left-side .user-img img{
+    height: 72px;
+    width: 72px;
     border-radius: 50%;
-    box-shadow: 0px 5px 7px 3px rgba(0, 0, 0, 0.2);
 }
-.Header-Content .left-side .user-info{
+.Header-Content .max-width .left-side .user-info{
     text-align: right;
 }
-.Header-Content .left-side .user-info i{
+.Header-Content .max-width .left-side .user-info .material-icons{
     font-size: 30px;
 }
-.Header-Content .left-side .user-info p{
-    font-size: 15px;
+.Header-Content .max-width .left-side .user-info .name{
+    font-size: 20px;
+    font-weight: 500;
 }
-.Header-Content .right-side{
-    color: #F1FAF0;
-    background-color: #2C302E;
-    width: 70%;
-    padding: 20px;
-    height: 50px;
+.Header-Content .max-width .right-side{
+    color: #fff;
+    width: 74%;
+    padding: 50px 20px 0px 20px;
+    background-color: #333;
 }
-.Header-Content .right-side h2{
-    font-weight: 400;
+.Header-Content .max-width .right-side .today{
+    font-size: 22px;
+    font-weight: 500;
 }
-.Header-Content .right-side p{
-    font-style: italic;
-    font-size: 17px;
+.Header-Content .max-width .right-side span{
+    font-size: 20px;
     font-weight: 300;
 }
 
-/* Section */
+/* Section Styling */
+.Section-Content .max-width{
+    display: flex;
+}
+.Section-Content .max-width .left-column{
+    flex-direction: column;
+    background-color: #f1faf0e1;
+    width: 351px;
+    height: 559px;
+}
+.Section-Content .max-width .left-column ul{
+    padding: 20px 15px 7px 20px;
+}
+.Section-Content .max-width .left-column ul li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 20px;
+}
+
+.Section-Content .max-width .right-column{
+    width: 925px;
+    
+}
