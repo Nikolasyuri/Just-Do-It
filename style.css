@@ -42,7 +42,6 @@
     width: 70%;
     background-color: #333;
     background: linear-gradient(90deg, rgba(51,51,51,1) 0%, rgba(64,64,64,1) 100%);
-    box-shadow: 0px 3px 5px #6b6b6b;
 }
 .Header-Content .max-width .right-side .today{
     padding: 40px 20px 0px 20px;
@@ -110,8 +109,8 @@
     background: linear-gradient(90deg, rgba(247,23,23,1) 17%, rgba(247,60,23,1) 100%);
 }
 .Section-Content .max-width .left-column ul .pessoal{
-    background-color: #008148;
-    background: linear-gradient(90deg, rgba(0,129,72,1) 0%, rgba(0,154,86,1) 100%);
+    background: rgb(2,159,90);
+    background: linear-gradient(90deg, rgba(2,159,90,1) 0%, rgba(3,171,97,1) 100%);     
 }
 .Section-Content .max-width .left-column ul .react-Native{
     background-color: #4464AD;
@@ -166,9 +165,23 @@
     font-size: 25px;
     padding: 0px 20px 0px 20px;
 }
-.Section-Content .max-width .right-column .max-width .tasks #timer{
+.Section-Content .max-width .right-column .max-width .tasks .timer{
+    display: flex;
+    align-items: center;
+}
+.Section-Content .max-width .right-column .max-width .tasks .timer span{
+    text-align: right;
+    font-weight: 500;
+    width: 100px;
+}
+.Section-Content .max-width .right-column .max-width .tasks .timer #timer{
     font-size: 27px;
     padding: 0px 20px 0px 20px;
+    transition: all 0.2s ease;
+}
+.Section-Content .max-width .right-column .max-width .tasks #timer:hover{
+    transform: scale(1.3);
+    color: #04a05a;
 }
 .Section-Content .max-width .right-column .max-width .tasks .task{
     width: 90%;
@@ -182,12 +195,40 @@
     display: flex;
     align-items: center;
 }
+.Section-Content .max-width .right-column .max-width .tasks .task .info .list{
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+    border-radius: 6px;
+}
+.Section-Content .max-width .right-column .max-width .tasks .task .info .list span{
+    color: black;
+}
+.Section-Content .max-width .right-column .max-width .tasks .task .info #Faculdade{
+    background-color: #FF9F1C;
+    background: linear-gradient(90deg, rgba(255,159,28,1) 17%, rgba(255,192,17,1) 100%);
+    
+}
+.Section-Content .max-width .right-column .max-width .tasks .task .info #Trabalho{
+    background-color: #F71735;
+    background: linear-gradient(90deg, rgba(247,23,23,1) 17%, rgba(247,60,23,1) 100%);
+}
+.Section-Content .max-width .right-column .max-width .tasks .task .info #Pessoal{
+    background: rgb(2,159,90);
+    background: linear-gradient(90deg, rgba(2,159,90,1) 0%, rgba(3,171,97,1) 100%);  
+}
+.Section-Content .max-width .right-column .max-width .tasks .task .info #React-Native{
+    background-color: #4464AD;
+    background: linear-gradient(90deg, rgba(45,96,209,1) 0%, rgba(51,105,224,1) 100%);
+}
 .Section-Content .max-width .right-column .max-width .tasks .task .info i{
     font-size: 20px;
-    margin-right: 5px;
+    margin-right: 3px;
+    color: #111;
 }
 .Section-Content .max-width .right-column .max-width .tasks .task .info span{
     font-size: 15px;
+    color: #333;
 }
 .Section-Content .max-width .right-column .max-width .tasks .task .info p{
     margin-right: 10px;
@@ -224,6 +265,122 @@
 }
 .Section-Content .max-width .right-column .add-task i:hover{
     transform: scale(1.1);
+}
+
+/* Countdown Styling */
+
+.Section-Content .countdown{
+    display: none;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+    background-color: #43B05C;
+}
+.Section-Content .countdown .pomodoro-task{
+    display: flex;
+    flex-direction: column;
+}
+.Section-Content .countdown .pomodoro-task h2{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 400;
+}
+.Section-Content .countdown .pomodoro-task .pomodoro-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    
+}
+.Section-Content .countdown .pomodoro-task .pomodoro-list i{
+    font-size: 50px;
+    margin: 0 5px;
+}
+.Section-Content .countdown .pomodoro-task .pomodoro-list span{
+    font-size: 30px;
+    font-weight: 500;
+}
+.Section-Content .countdown .timer-countdown{
+    margin: 50px 0;
+}
+.Section-Content .countdown .timer-countdown span{
+    font-size: 90px;
+    color: #fff;
+    text-shadow: 1px 2px 1px #333;
+}
+.Section-Content .countdown button{
+    color: #43B05C;
+    font-size: 25px;
+    padding: 15px 65px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1px 3px 3px #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.Section-Content .countdown button:hover{
+    transform: scale(1.1);
+    color: #fff;
+    background-color: #43B05C;
+}
+.Section-Content .countdown .buttons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding: 350px 80px 0 0;
+}
+.Section-Content .countdown .buttons #song{
+    font-size: 27px;
+    background-color: rgb(233, 178, 27);
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 1px 3px 2px #555;
+    transition: all 0.2s ease;
+}
+.Section-Content .countdown .buttons #song:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.Section-Content .countdown .buttons #close{
+    font-size: 27px;
+    color: #fff;
+    background-color: rgb(233, 27, 27);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 2px #555;
+    transition: all 0.2s ease;
+}
+.Section-Content .countdown .buttons #close:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Form Styling */
+
+.Section-Content .form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #888;
+    padding: 20px;
+    border-radius: 6px;
+    width: 30%;
+}
+.Section-Content .form fieldset{
+    border: none;
+}
+.Section-Content .form fieldset legend{
+    text-align: center;
+    padding: 10px;
 }
 
 @media (max-width: 997px){
