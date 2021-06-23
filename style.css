@@ -366,22 +366,67 @@
 /* Form Styling */
 
 .Section-Content .form{
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: #888;
     padding: 20px;
-    border-radius: 6px;
     width: 30%;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid #8888;
+    border-radius: 6px;
+    box-shadow: 0px 5px 10px #555;
 }
 .Section-Content .form fieldset{
     border: none;
 }
 .Section-Content .form fieldset legend{
+    font-size: 20px;
     text-align: center;
     padding: 10px;
 }
+.Section-Content .form fieldset .inputUser{
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-size: 16px;
+}
+.Section-Content .form fieldset .inputBox .label-input{
+    /* position: absolute; */
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.Section-Content .form fieldset .buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.Section-Content .form fieldset .buttons .close{
+    font-size: 17px;
+    padding: 10px 22px;
+    color: red;
+    background-color: #fff;
+    border: 1px solid red;
+    border-radius: 8px;
+}
+.Section-Content .form fieldset .buttons .add{
+    font-size: 18px;
+    padding: 10px 18px;
+    color: #fff;
+    background-color: #43B05C;
+    border: 1px solid #43B05C;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
 
 @media (max-width: 997px){
     .Header-Content .max-width{

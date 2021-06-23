@@ -52,21 +52,22 @@
         <div class="form">
             <form action="">
                 <fieldset>
-                    <legend><b>Nova Tarefa</b></legend>
+                    <legend>Adicionar Nova Tarefa</legend>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="new-task" id="new-task" class="new-task" required>
-                        <label for="new-task">Adicionar Nova Tarefa</label>
+                        <label for="new-task" class="label-input">Adicionar Nova Tarefa</label>
+                        <i class="material-icons">alarm</i>
+                        <input type="text" name="new-task" id="new-task" class="inputUser" placeholder="Adicionar nova tarefa" required>
                     </div>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="new-step" id="new-step" class="new-step">
-                        <label for="new-step">1º passo</label>
+                        <label for="new-step" class="label-input">1º passo</label>
+                        <input type="text" name="new-step" id="new-step" class="inputUser" placeholder="1º Passo">
                     </div>
                     <br>
                     <div class="inputBox">
-                        <label for="list">Selecionar Lista</label>
-                            <select id="list" name="list">
+                        <label for="list" class="label-input">Selecionar Lista</label>
+                            <select id="list" name="list" class="inputUser">
                               <option value="nenhum">Nenhum</option>
                               <option value="faculdade">Faculdade</option>
                               <option value="trabalho">Trabalho</option>
@@ -76,8 +77,8 @@
                     </div>
                     <br>
                     <div class="inputBox">
-                        <label for="repeat">Repetir</label>
-                            <select id="repeat" name="repeat">
+                        <label for="repeat" class="label-input">Repetir</label>
+                            <select id="repeat" name="repeat" class="inputUser">
                               <option value="nenhum">Não se repete</option>
                               <option value="diariamente">Diariamente</option>
                               <option value="semanalmente">Semanalmente</option>
@@ -87,23 +88,23 @@
                     </div>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="description" id="description" class="description">
-                        <label for="description">Descrição</label>
+                        <label for="description" class="label-input">Descrição</label>
+                        <input type="text" name="description" id="description" class="inputUser" placeholder="Descrição">
                     </div>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="agenda" id="agenda" class="agenda">
-                        <label for="agenda">Adicionar ao Google Agenda</label>
+                        <label for="agenda" class="label-input">Adicionar ao Google Agenda</label>
+                        <input type="text" name="agenda" id="agenda" class="inputUser">
                     </div>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="timer" id="timer" class="timer">
-                        <label for="timer">Timer</label>
+                        <label for="timer" class="label-input">Timer</label>
+                        <input type="number" name="timer" id="timer" class="inputUser" min="0">
                     </div>
                     <br>
                     <div class="buttons">
-                        <input type="reset" value="Fechar">
-                        <input type="submit" name="submit" id="submit" value="Adicionar Tarefa">
+                        <input type="reset" value="Excluir" class="close">
+                        <input type="submit" name="submit" id="submit" value="Adicionar Tarefa" class="add">
                     </div>
                 </fieldset>
             </form>
