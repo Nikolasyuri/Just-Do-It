@@ -32,7 +32,7 @@
     </header>
     <!-- Section -->
     <div class="Section-Content">
-        <!-- <div class="countdown">
+        <div class="countdown">
             <div class="pomodoro-task">
                 <h2>Estudar Piano</h2>
                 <div class="pomodoro-list">
@@ -48,58 +48,65 @@
                 <i class="material-icons" id="song">audiotrack</i>
                 <i class="material-icons" id="close">close</i>
             </div>
-        </div> -->
+        </div>
         <div class="form">
             <form action="">
                 <fieldset>
                     <legend>Adicionar Nova Tarefa</legend>
                     <br>
-                    <div class="inputBox">
-                        <label for="new-task" class="label-input">Adicionar Nova Tarefa</label>
-                        <i class="material-icons">alarm</i>
+                    <div class="inputBox" id="new-task">
+                        <label for="new-task" class="label-input"></label>
                         <input type="text" name="new-task" id="new-task" class="inputUser" placeholder="Adicionar nova tarefa" required>
+                        <div id="icon">
+                            <i class="material-icons">alarm</i>
+                        </div>
                     </div>
                     <br>
-                    <div class="inputBox">
-                        <label for="new-step" class="label-input">1º passo</label>
+                    <div class="inputBox" id="new-step">
+                        <div id="icon">
+                            <i class="material-icons">add_circle_outline</i>
+                        </div>
+                        <label for="new-step" class="label-input"></label>
                         <input type="text" name="new-step" id="new-step" class="inputUser" placeholder="1º Passo">
                     </div>
                     <br>
-                    <div class="inputBox">
-                        <label for="list" class="label-input">Selecionar Lista</label>
-                            <select id="list" name="list" class="inputUser">
-                              <option value="nenhum">Nenhum</option>
-                              <option value="faculdade">Faculdade</option>
-                              <option value="trabalho">Trabalho</option>
-                              <option value="pessoal">Pessoal</option>
-                              <option value="react-Native">React-Native</option>
-                            </select>
+                    <div class="inputBox" id="select">
+                        <div class="inputBox" id="list">
+                            <label for="list" class="label-input"></label>
+                                <select id="list" name="list" class="inputUser">
+                                    <option value="Selecionar Lista">Selecionar Lista</option>
+                                    <option value="faculdade">Faculdade</option>
+                                    <option value="trabalho">Trabalho</option>
+                                    <option value="pessoal">Pessoal</option>
+                                    <option value="react-Native">React-Native</option>
+                                </select>
+                        </div>
+                        <br>
+                        <div class="inputBox" id="repeat">
+                            <label for="repeat" class="label-input"></label>
+                                <select id="repeat" name="repeat" class="inputUser">
+                                    <option value="Não repete">Não repete</option>
+                                    <option value="diariamente">Diariamente</option>
+                                    <option value="semanalmente">Semanalmente</option>
+                                    <option value="mensalmente">Mensalmente</option>
+                                    <option value="anualmente">Anualmente</option>
+                                </select>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="inputBox" id="description">
+                        <label for="description" class="label-input"></label>
+                        <textarea name="description" id="description" rows="8" cols="50" class="inputUser" placeholder="Descreva sua tarefa"></textarea>
                     </div>
                     <br>
-                    <div class="inputBox">
-                        <label for="repeat" class="label-input">Repetir</label>
-                            <select id="repeat" name="repeat" class="inputUser">
-                              <option value="nenhum">Não se repete</option>
-                              <option value="diariamente">Diariamente</option>
-                              <option value="semanalmente">Semanalmente</option>
-                              <option value="mensalmente">Mensalmente</option>
-                              <option value="anualmente">Anualmente</option>
-                            </select>
+                    <div class="inputBox" id="agenda">
+                        <h4>Adicionar ao Google Agenda</h4>
+                        <img src="./assets/images/google-calendar.png" alt="Google Calendar Icon">
                     </div>
                     <br>
-                    <div class="inputBox">
-                        <label for="description" class="label-input">Descrição</label>
-                        <input type="text" name="description" id="description" class="inputUser" placeholder="Descrição">
-                    </div>
-                    <br>
-                    <div class="inputBox">
-                        <label for="agenda" class="label-input">Adicionar ao Google Agenda</label>
-                        <input type="text" name="agenda" id="agenda" class="inputUser">
-                    </div>
-                    <br>
-                    <div class="inputBox">
-                        <label for="timer" class="label-input">Timer</label>
-                        <input type="number" name="timer" id="timer" class="inputUser" min="0">
+                    <div class="inputBox" id="timer">
+                        <label for="timer" class="label-input"></label>
+                        <input type="number" name="timer" id="timer" class="inputUser" min="0" placeholder="Timer">
                     </div>
                     <br>
                     <div class="buttons">
