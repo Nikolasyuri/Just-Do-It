@@ -64,6 +64,7 @@
     flex-direction: column;
     background-color: #f1faf0e1;
     width: 30%;
+    height: 85vh;
 }
 .Section-Content .max-width .left-column ul{
     padding: 5px 5px 0px 5px;
@@ -148,9 +149,11 @@
 
 .Section-Content .max-width .right-column {
     width: 70%;
+    height: 85vh;
 }
 .Section-Content .max-width .right-column .max-width{
     flex-direction: column;
+    height: 83vh;
     padding: 10px 20px 0px 20px;
 }
 
