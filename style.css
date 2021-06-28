@@ -57,7 +57,7 @@
 /* Section Styling */
 
 .Section-Content .max-width{
-    display: flex;
+    display: none;
     height: 85vh;
 }
 .Section-Content .max-width .left-column{
@@ -242,12 +242,16 @@
     margin-right: 10px;
     margin-left: 10px;
 }
-.Section-Content .max-width .right-column .max-width .buttons{
+.Section-Content .buttons{
+    position: fixed;
+    top: 80%;
+    left: 88%;
     display: flex;
     justify-content: flex-end;
-    margin: 20px 0;
+    z-index: 1;
 }
-.Section-Content .max-width .right-column .agenda i{
+
+.Section-Content .agenda i{
     padding: 10px;
     margin-right: 10px;
     font-size: 35px;
@@ -258,10 +262,10 @@
     cursor: pointer;
     transition: 0.2s ease all;
 }
-.Section-Content .max-width .right-column .agenda i:hover{
+.Section-Content .agenda i:hover{
     transform: scale(1.1);
 }
-.Section-Content .max-width .right-column .add-task i{
+.Section-Content .add-task i{
     font-size: 35px;
     padding: 10px;
     color: #fff;
@@ -271,7 +275,7 @@
     cursor: pointer;
     transition: 0.2s ease all;
 }
-.Section-Content .max-width .right-column .add-task i:hover{
+.Section-Content .add-task i:hover{
     transform: scale(1.1);
 }
 
@@ -512,8 +516,88 @@
     cursor: pointer;
 }
 
-
-
+/* Calendar*/
+.Section-Content .calendar{
+    display: flex;
+    height: 85vh;
+}
+.Section-Content .calendar .week{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+}
+.Section-Content .calendar .week .weekDay{
+    width: 95%;
+    padding: 10px 0;
+    background-color: #f1faf0e1;
+    border: 1px solid #b8b8b8e1;
+    border-top: none;
+}
+.Section-Content .calendar .week .weekDay h3{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.Section-Content .calendar .week .weekDay span{
+    font-size: 19px;
+}
+.Section-Content .calendar .week .weekDay .tasks{
+    display: flex;
+    align-items: center;
+    padding: 7px 5px;
+    margin: 7px 3px;
+    border-radius: 6px;
+    box-shadow: 0px 3px 4px grey;
+}
+.Section-Content .calendar .week .weekDay .tasks i{
+    font-size: 22px;
+    padding: 0 1px;
+}
+.Section-Content .calendar .week .weekDay #faculdade{
+    background-color: #FF9F1C;
+    background: linear-gradient(90deg, rgba(255,159,28,1) 17%, rgba(255,192,17,1) 100%); 
+}
+.Section-Content .calendar .week .weekDay #trabalho{
+    background-color: #F71735;
+    background: linear-gradient(90deg, rgba(247,23,23,1) 17%, rgba(247,60,23,1) 100%);
+}
+.Section-Content .calendar .week .weekDay #pessoal{
+    background: rgb(2,159,90);
+    background: linear-gradient(90deg, rgba(2,159,90,1) 0%, rgba(3,171,97,1) 100%);  
+}
+.Section-Content .calendar .week .weekDay #react-native{
+    background-color: #4464AD;
+    background: linear-gradient(90deg, rgba(45,96,209,1) 0%, rgba(51,105,224,1) 100%);
+}
+.Section-Content .calendar .week .weekDay .tasks .task {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 10px;
+    width: 100%;
+}
+.Section-Content .calendar .week .weekDay .tasks .task h4{
+    font-size: 14px;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0 0 0;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info .list i{
+    font-size: 16px;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info .list span{
+    font-size: 12px;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info i{
+    font-size: 16px;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info span{
+    font-size: 12px;
+}
 
 
 
