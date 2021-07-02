@@ -1,13 +1,48 @@
 var hcLeftSide = document.querySelector('.hcleft-side');
-var hcRightSide = document.querySelector('.hcright-side');
 var userInfo = document.querySelector('.user-info')
+var hcRightSide = document.querySelector('.hcright-side');
+var todayDate = document.querySelector('#todayDate')
 var menuIcon = document.getElementsByName('menuIcon')[0];
 var sectionContent = document.querySelector('.Section-Content')
 var maxWidth = document.querySelector('.max-width');
 var scLeftSide = document.querySelector('.left-column');
 var scRightSide = document.querySelector('.right-column');
+var mainButtons = document.querySelector('.mainButtons')
 var calendar = document.querySelector('.calendar');
 var form = document.querySelector('.form')
+var countdown = document.querySelector('.countdown')
+var songCountdown = document.querySelector('#song')
+var closeCountdown = document.querySelector('#close')
+
+//Header Today date
+function carregar(){
+    var data = new Date();
+    var weekDay = new Array(7);
+    weekDay[0] = "Domingo";
+    weekDay[1] = "Segunda";
+    weekDay[2] = "Terça";
+    weekDay[3] = "Quarta";
+    weekDay[4] = "Quinta";
+    weekDay[5] = "Sexta";
+    weekDay[6] = "Sábado";
+    var d = weekDay[data.getDay()];
+    var monthDay = data.getUTCDate()
+    var months = new Array(12);
+    months[0] = "Janeiro";
+    months[1] = "Fevereiro";
+    months[2] = "Março";
+    months[3] = "Abril";
+    months[4] = "Maio";
+    months[5] = "Junho";
+    months[6] = "Julho";
+    months[7] = "Agosto";
+    months[8] = "Setembro";
+    months[9] = "Outubro";
+    months[10] = "Novembro";
+    months[11] = "Dezembro";
+    var month = months[data.getUTCMonth()];
+    todayDate.innerHTML = `${d}, ${monthDay} de ${month}`;
+}
 
 //Left Column Minimize
 function minimizeLeftSide(){
@@ -43,4 +78,16 @@ function openNewTask(){
     } else {
         form.style.display = 'none';
     }
+}
+
+//Countdown
+function countdownIn(){
+    countdown.style.display = 'flex'
+    maxWidth.style.display = "none";
+    mainButtons.style.display = "none";
+}
+function countdownOut(){
+    countdown.style.display = 'none'
+    maxWidth.style.display = "flex";
+    mainButtons.style.display = "flex";
 }

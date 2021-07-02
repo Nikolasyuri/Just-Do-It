@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body onload="carregar()">
     <!-- Header -->
     <header>
         <div class="Header-Content">
@@ -26,7 +26,7 @@
                 <div class="hcright-side">
                     <i class="material-icons" name='menuIcon' onclick="maximizeLeftSide()">menu</i>
                     <div class="today">Hoje,</div>
-                    <span>Segunda, 7 de julho</span>
+                    <span id="todayDate">Segunda, 7 de julho</span>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="timer">
                             <span id="countdown">30 min</span>
-                            <i class="material-icons" id="timer">timer</i>
+                            <i class="material-icons" id="timer" onclick="countdownIn()">timer</i>
                         </div>
                     </div>
                     <div class="tasks">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class="timer">
-                            <i class="material-icons" id="timer">timer</i>
+                            <i class="material-icons" id="timer" onclick="countdownIn()">timer</i>
                         </div>
                     </div>
                     <div class="tasks">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="timer">
-                            <i class="material-icons" id="timer">timer</i>
+                            <i class="material-icons" id="timer" onclick="countdownIn()">timer</i>
                         </div>
                     </div>
                     <div class="tasks">
@@ -156,7 +156,7 @@
                         </div>
                         <div class="timer">
                             <span id="countdown">40 min</span>
-                            <i class="material-icons" id="timer">timer</i>
+                            <i class="material-icons" id="timer" onclick="countdownIn()">timer</i>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
         </div>
         
         <!-- Buttons -->
-        <div class="buttons">
+        <div class="mainButtons">
             <div class="agenda">
                 <i class="material-icons" id="agenda-icon" onclick="openCalendar()">event_note</i>
             </div>
@@ -186,14 +186,14 @@
                 <span>24:59</span>
             </div>
             <button>Concluir</button>
-            <div class="buttons">
+            <div class="countdownButtons">
                 <i class="material-icons" id="song">audiotrack</i>
-                <i class="material-icons" id="close">close</i>
+                <i class="material-icons" id="close" onclick="countdownOut()">close</i>
             </div>
         </div>
         <!-- Form -->
         <div class="form">
-            <form action="">
+            <form action="" autocomplete="off">
                 <fieldset>
                     <legend>Adicionar Nova Tarefa</legend>
                     <br>
@@ -274,9 +274,6 @@
                                     <i class="material-icons" id="list-icon">face</i>
                                     <span id="list">Pessoal</span>
                                 </div>
-                                <p>-</p>
-                                <i class="material-icons" id="date-icon">today</i>
-                                <span id="date">Hoje</span>
                             </div>
                         </div>
                     </div>
@@ -289,9 +286,6 @@
                                     <i class="material-icons" id="list-icon">face</i>
                                     <span id="list">Pessoal</span>
                                 </div>
-                                <p>-</p>
-                                <i class="material-icons" id="date-icon">today</i>
-                                <span id="date">Hoje</span>
                             </div>
                         </div>
                     </div>
@@ -303,21 +297,19 @@
                         <i class="material-icons" id="radio">radio_button_unchecked</i>
                         <div class="task">
                             <h4>Criar Design</h4>
-                            <div class="originalTask">
-                                <i class="material-icons" id="original-task-icon">task</i>
-                                <span id="original-task">Trabalho Figma</span>
-                            </div>
                             <div class="info">
+                                <div class="originalTask">
+                                    <i class="material-icons" id="original-task-icon">task</i>
+                                    <span id="original-task">Relatório Trimestral</span>
+                                </div>
                                 <div class="list" id="React-Native">
                                     <i class="material-icons" id="list-icon">code</i>
                                     <span id="list">React Native</span>
                                 </div>
-                                <p>-</p>
-                                <i class="material-icons" id="date-icon">date_range</i>
-                                <span id="date">Amanhã</span>
-                                <p>-</p>
-                                <i class="material-icons" id="time-icon">schedule</i>
-                                <span class="time">14:30h</span>
+                                <div class="timeTo">
+                                    <i class="material-icons" id="time-icon">schedule</i>
+                                    <span class="time">14:30h</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -334,9 +326,6 @@
                                     <i class="material-icons" id="list-icon">face</i>
                                     <span id="list">Pessoal</span>
                                 </div>
-                                <p>-</p>
-                                <i class="material-icons" id="date-icon">today</i>
-                                <span id="date">Hoje</span>
                             </div>
                         </div>
                     </div>
@@ -357,9 +346,6 @@
                                     <i class="material-icons" id="list-icon">face</i>
                                     <span id="list">Pessoal</span>
                                 </div>
-                                <p>-</p>
-                                <i class="material-icons" id="date-icon">today</i>
-                                <span id="date">Hoje</span>
                             </div>
                         </div>
                     </div>
@@ -372,13 +358,18 @@
                         <div class="task">
                             <h4>Apresentar Trabalho</h4>
                             <div class="info">
-                                <div class="list" id="trabalho">
-                                    <i class="material-icons" id="list-icon">work</i>
-                                    <span id="list">Trabalho</span>
+                                <div class="originalTask">
+                                    <i class="material-icons" id="original-task-icon">task</i>
+                                    <span id="original-task">Relatório Trimestral</span>
                                 </div>
-                                <p>-</p>
-                                <i class="material-icons" id="date-icon">today</i>
-                                <span id="date">Amanhã</span>
+                                <div class="list" id="React-Native">
+                                    <i class="material-icons" id="list-icon">code</i>
+                                    <span id="list">React Native</span>
+                                </div>
+                                <div class="timeTo">
+                                    <i class="material-icons" id="time-icon">schedule</i>
+                                    <span class="time">14:30h</span>
+                                </div>
                             </div>
                         </div>
                     </div>

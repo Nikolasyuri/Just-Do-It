@@ -82,7 +82,9 @@
     padding: 10px 0 0 16px;
     cursor: pointer;
     transition: all 0.8s ease;
+    animation: opacityBtn 1.2s ease forwards;
 }
+
 .Header-Content .hcMax-width .hcright-side .today{
     padding: 40px 20px 0px 20px;
     font-size: 22px;
@@ -109,6 +111,7 @@
 .Section-Content .max-width{
     display: flex;
     height: 85vh;
+    animation: opacityBtn 0.3s ease-in-out forwards;
 }
 .Section-Content .max-width .left-column{
     flex-direction: column;
@@ -170,6 +173,7 @@
     font-size: 19px;
     font-weight: 500;
     width: 50%;
+    animation: opacityBtn 1.2s ease forwards;
 }
 .Section-Content .max-width #minimizeLeftColumn ul li h3{
     display: none;
@@ -177,12 +181,14 @@
 .Section-Content .max-width .left-column ul li p{
     font-size: 16px;
     font-weight: 500;
+    animation: opacityBtn 1.2s ease forwards;
 }
 .Section-Content .max-width #minimizeLeftColumn ul li p{
     display: none;
 }
 .Section-Content .max-width .left-column ul li #sort-lists{
     font-size: 20px;
+    animation: opacityBtn 1.2s ease forwards;
 }
 .Section-Content .max-width #minimizeLeftColumn ul li #sort-lists{
     display: none;
@@ -208,6 +214,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 120px 20px;
+    animation: opacityBtn 1.2s ease forwards;
 }
 .Section-Content .max-width #minimizeLeftColumn .new-list {
     display: none;
@@ -262,6 +269,10 @@
     border-radius: 6px;
     box-shadow: 0px 3px 5px #6b6b6b;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+.Section-Content .max-width .right-column .max-width .tasks:hover{
+    transform: scale(1.01);
 }
 .Section-Content .max-width .right-column .max-width .tasks #radio{
     font-size: 25px;
@@ -336,7 +347,10 @@
     margin-right: 10px;
     margin-left: 10px;
 }
-.Section-Content .buttons{
+
+/* Buttons */
+
+.Section-Content .mainButtons{
     position: fixed;
     top: 80%;
     left: 88%;
@@ -356,7 +370,7 @@
     transition: 0.2s ease all;
 }
 .Section-Content .agenda i:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .Section-Content .add-task i{
     font-size: 35px;
@@ -369,7 +383,7 @@
     transition: 0.2s ease all;
 }
 .Section-Content .add-task i:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* Countdown Styling */
@@ -384,6 +398,7 @@
     margin: 0;
     padding: 0px;
     background-color: #43B05C;
+    animation: opacityBtn 0.2s ease-in-out forwards;
 }
 .Section-Content .countdown .pomodoro-task{
     display: flex;
@@ -433,14 +448,14 @@
     color: #fff;
     background-color: #43B05C;
 }
-.Section-Content .countdown .buttons{
+.Section-Content .countdown .countdownButtons{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-self: flex-end;
     padding: 350px 80px 0 0;
 }
-.Section-Content .countdown .buttons #song{
+.Section-Content .countdown .countdownButtons #song{
     font-size: 27px;
     background-color: rgb(233, 178, 27);
     padding: 10px;
@@ -449,11 +464,11 @@
     box-shadow: 1px 3px 2px #555;
     transition: all 0.2s ease;
 }
-.Section-Content .countdown .buttons #song:hover{
+.Section-Content .countdown .countdownButtons #song:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
-.Section-Content .countdown .buttons #close{
+.Section-Content .countdown .countdownButtons #close{
     font-size: 27px;
     color: #fff;
     background-color: rgb(233, 27, 27);
@@ -462,7 +477,7 @@
     box-shadow: 1px 3px 2px #555;
     transition: all 0.2s ease;
 }
-.Section-Content .countdown .buttons #close:hover{
+.Section-Content .countdown .countdownButtons #close:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -470,7 +485,7 @@
 /* Form Styling */
 
 .Section-Content .form{
-    display: flex;
+    display: none;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     top: 50%;
@@ -482,6 +497,8 @@
     border: 1px solid #8888;
     border-radius: 6px;
     box-shadow: 0px 5px 10px #555;
+    animation: opacityBtn 0.3s ease-in-out forwards;
+    
 }
 .Section-Content .form fieldset{
     border: none;
@@ -613,6 +630,7 @@
 .Section-Content .calendar{
     display: none;
     height: 85vh;
+    animation: opacityBtn 0.2s ease-in-out forwards;
 }
 .Section-Content #openCalendar{
     display: flex;
@@ -682,35 +700,53 @@
 .Section-Content .calendar .week .weekDay .tasks .task h4{
     font-size: 14px;
 }
+.Section-Content .calendar .week .weekDay .tasks .task .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 3px 0 0 0;
+}
 .Section-Content .calendar .week .weekDay .tasks .task .originalTask{
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 2px 0;
+    /* flex-wrap: wrap; */
+    width: 100%;
 }
 .Section-Content .calendar .week .weekDay .tasks .task .originalTask i{
     font-size: 16px;
     padding: 0 5px;
+    width: 15%;
 }
 .Section-Content .calendar .week .weekDay .tasks .task .originalTask span{
     font-size: 12px;
-}
-.Section-Content .calendar .week .weekDay .tasks .task .info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px 0 0 0;
+    flex-wrap: wrap;
 }
 .Section-Content .calendar .week .weekDay .tasks .task .info .list{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .Section-Content .calendar .week .weekDay .tasks .task .info .list i{
     font-size: 16px;
-    padding: 0 3px;
+    padding: 0 5px;
+    width: 15%;
 }
 .Section-Content .calendar .week .weekDay .tasks .task .info .list span{
+    font-size: 12px;
+    
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info .timeTo{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info .timeTo i{
+    font-size: 16px;
+    padding: 0 5px;
+    width: 15%;
+}
+.Section-Content .calendar .week .weekDay .tasks .task .info .timeTo span{
     font-size: 12px;
     
 }
@@ -725,7 +761,14 @@
     font-size: 12px;
 }
 
-
+@keyframes opacityBtn{
+    0%{
+        opacity: 0.0;
+}
+    100%{
+        opacity: 1.0;
+    }
+}
 
 
 
