@@ -34,7 +34,7 @@
     <!-- Section -->
     <div class="Section-Content">
         <!-- Main Page -->
-        <div class="max-width">
+        <div class="scMax-width">
             <div class="left-column">
                 <nav class="Lists">
                     <ul>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="right-column">
-                <div class="max-width">
+                <div class="max-width" id="allTasks">
                     <div class="tasks">
                         <i class="material-icons" id="radio">radio_button_unchecked</i>
                         <div class="task">
@@ -169,7 +169,7 @@
                 <i class="material-icons" id="agenda-icon" onclick="openCalendar()">event_note</i>
             </div>
             <div class="add-task">
-                <i class="material-icons" id="add-task-icon" onclick="openNewTask()">add_circle</i>
+                <i class="material-icons" id="add-task-icon" onclick="openForm()">add_circle</i>
             </div>
         </div>
 
@@ -253,8 +253,8 @@
                     </div>
                     <br>
                     <div class="newTaskButtons">
-                        <input type="reset" value="Excluir" class="close">
-                        <input type="submit" name="submit" id="submit" value="Adicionar Tarefa" class="add">
+                        <input type="reset" value="Excluir" class="close" onclick="closeTask()">
+                        <input type="submit" name="submit" id="submit" value="Adicionar Tarefa" class="add" onclick="addNewTask()">
                     </div>
                 </fieldset>
             </form>

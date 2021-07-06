@@ -4,7 +4,7 @@ var hcRightSide = document.querySelector('.hcright-side');
 var todayDate = document.querySelector('#todayDate')
 var menuIcon = document.getElementsByName('menuIcon')[0];
 var sectionContent = document.querySelector('.Section-Content')
-var maxWidth = document.querySelector('.max-width');
+var scMaxWidth = document.querySelector('.scMax-width');
 var scLeftSide = document.querySelector('.left-column');
 var scRightSide = document.querySelector('.right-column');
 var mainButtons = document.querySelector('.mainButtons')
@@ -62,32 +62,38 @@ function maximizeLeftSide(){
 
 //Calendar
 function openCalendar(){
-    if (maxWidth.style.display == "flex"){
-        maxWidth.style.display = "none";
+    if (scMaxWidth.style.display == "flex"){
+        scMaxWidth.style.display = "none";
         calendar.setAttribute('id','openCalendar');
     } else {
-        maxWidth.style.display = "flex";
+        scMaxWidth.style.display = "flex";
         calendar.removeAttribute('id','openCalendar');
     }
 }
 
 // New Task
-function openNewTask(){
+function openForm(){
     if (form.style.display == 'none'){
         form.style.display = 'flex';
     } else {
         form.style.display = 'none';
     }
 }
+function addNewTask(){
+}
+function closeTask(){
+    
+    openForm();
+}
 
 //Countdown
 function countdownIn(){
     countdown.style.display = 'flex'
-    maxWidth.style.display = "none";
+    scMaxWidth.style.display = "none";
     mainButtons.style.display = "none";
 }
 function countdownOut(){
     countdown.style.display = 'none'
-    maxWidth.style.display = "flex";
+    scMaxWidth.style.display = "flex";
     mainButtons.style.display = "flex";
 }
