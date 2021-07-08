@@ -197,16 +197,16 @@
                 <fieldset>
                     <legend>Adicionar Nova Tarefa</legend>
                     <br>
-                    <div class="inputBox" id="new-task">
+                    <div class="inputBox" id="newTask">
                         <label for="new-task" class="label-input"></label>
                         <input type="text" name="new-task" id="new-task" class="inputUser" placeholder="Adicionar nova tarefa" required>
-                        <div id="icon">
-                            <i class="material-icons">alarm</i>
+                        <div id="timerOptionIcon">
+                            <i class="material-icons" onclick="openTimerOption()">alarm</i>
                         </div>
                     </div>
                     <br>
                     <div class="inputBox" id="new-step">
-                        <div id="icon">
+                        <div id="newStepIcon">
                             <i class="material-icons">add_circle_outline</i>
                         </div>
                         <label for="new-step" class="label-input"></label>
@@ -214,9 +214,9 @@
                     </div>
                     <br>
                     <div class="inputBox" id="select">
-                        <div class="inputBox" id="list">
+                        <div class="inputBox" id="formAllLists">
                             <label for="list" class="label-input"></label>
-                                <select id="list" name="list" class="inputUser">
+                                <select id="formList" name="list" class="inputUser">
                                     <option value="Selecionar Lista">Selecionar Lista</option>
                                     <option value="faculdade">Faculdade</option>
                                     <option value="trabalho">Trabalho</option>
@@ -225,9 +225,9 @@
                                 </select>
                         </div>
                         <br>
-                        <div class="inputBox" id="repeat">
+                        <div class="inputBox" id="formAllRepeat">
                             <label for="repeat" class="label-input"></label>
-                                <select id="repeat" name="repeat" class="inputUser">
+                                <select id="formRepeat" name="repeat" class="inputUser">
                                     <option value="Não repete">Não repete</option>
                                     <option value="diariamente">Diariamente</option>
                                     <option value="semanalmente">Semanalmente</option>
@@ -237,19 +237,15 @@
                         </div>
                         <br>
                     </div>
-                    <div class="inputBox" id="description">
-                        <label for="description" class="label-input"></label>
-                        <textarea name="description" id="description" rows="8" cols="50" class="inputUser" placeholder="Descreva sua tarefa"></textarea>
-                    </div>
                     <br>
                     <div class="inputBox" id="agenda">
                         <h4>Adicionar ao Google Agenda</h4>
                         <img src="./assets/images/google-calendar.png" alt="Google Calendar Icon">
                     </div>
                     <br>
-                    <div class="inputBox" id="timer">
-                        <label for="timer" class="label-input"></label>
-                        <input type="number" name="timer" id="timer" class="inputUser" min="0" placeholder="Timer">
+                    <div class="inputBox" id="formAllTimer">
+                        <label for="forTimer" class="label-input"></label>
+                        <input type="number" name="timer" id="formTimer" class="inputUser" min="0" placeholder="Timer">
                     </div>
                     <br>
                     <div class="newTaskButtons">

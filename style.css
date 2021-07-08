@@ -278,6 +278,7 @@
     font-size: 25px;
     padding: 0px 20px 0px 20px;
 }
+
 .Section-Content .scMax-width .right-column .max-width .tasks .timer{
     display: flex;
     align-items: center;
@@ -485,20 +486,22 @@
 /* Form Styling */
 
 .Section-Content .form{
-    display: none;
+    display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
+    height: 500px;
     transform: translate(-50%,-50%);
     padding: 20px;
-    width: 400px;
-    background-color: rgb(247, 247, 247);
-    border: 1px solid #8888;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
     border-radius: 6px;
-    box-shadow: 0px 5px 10px #555;
+    box-shadow: 5px 7px 10px #555;
     animation: opacityBtn 0.3s ease-in-out forwards;
-    
 }
 .Section-Content .form fieldset{
     border: none;
@@ -519,9 +522,6 @@
 .Section-Content .form fieldset input {
     padding-left: 10px;
 }
-.Section-Content .form fieldset #description textarea{
-    resize: none;
-}
 .Section-Content .form fieldset .inputBox ::placeholder{
     padding-left: 5px;
 }
@@ -529,11 +529,11 @@
     pointer-events: none;
     transition: all 0.3s ease;
 }
-.Section-Content .form fieldset #new-task{
+.Section-Content .form fieldset #newTask{
     display: flex;
     margin-bottom: -5px;
 }
-.Section-Content .form fieldset #new-task #icon i{
+.Section-Content .form fieldset #newTask #timerOptionIcon i{
     font-size: 25px;
     padding-left: 5px;
     cursor: pointer;
@@ -542,7 +542,7 @@
     display: flex;
     width: 60%;
 }
-.Section-Content .form fieldset #new-step #icon i{
+.Section-Content .form fieldset #new-step #newStepIcon i{
     font-size: 22px;
     padding-right: 7px;
     cursor: pointer;
@@ -558,16 +558,9 @@
 .Section-Content .form fieldset #select option{
     text-align: center;
 }
-.Section-Content .form fieldset #select #list,
-.Section-Content .form fieldset #select #repeat{
+.Section-Content .form fieldset #select #formAllLists,
+.Section-Content .form fieldset #select #formAllRepeat{
     cursor: pointer;
-}
-.Section-Content .form fieldset .inputBox #description{
-    border: 1px solid #444;
-    border-radius: 6px;
-}
-.Section-Content .form fieldset #description ::placeholder{
-    padding: 5px 0 0 8px;
 }
 .Section-Content .form fieldset #agenda{
     display: flex;
@@ -576,7 +569,7 @@
     text-align: center;
     background-color: #1e6ff0d8;
     border-radius: 5px;
-    padding: 3px 0;
+    padding: 3px 20px;
     margin: 0 10%;
     cursor: pointer;
 }
@@ -593,12 +586,12 @@
     padding: 2px;
     border-radius: 50%;
 }
-
-.Section-Content .form fieldset #timer{
+.Section-Content .form fieldset #formAllTimer{
+    display: none;
     height: 30px;
     text-align: center;
 }
-.Section-Content .form fieldset #timer ::placeholder{
+.Section-Content .form fieldset #formAllTimer ::placeholder{
     text-align: center;
     align-items: center;
 }
@@ -615,6 +608,7 @@
     border: 1px solid red;
     border-radius: 8px;
     cursor: pointer;
+    margin-right: 10px;
 }
 .Section-Content .form fieldset .newTaskButtons .add{
     font-size: 18px;
@@ -624,6 +618,7 @@
     border: 1px solid #43B05C;
     border-radius: 8px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 /* Calendar*/

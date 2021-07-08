@@ -71,7 +71,6 @@ function openCalendar(){
     }
 }
 
-// New Task
 function openForm(){
     if (form.style.display == 'none'){
         form.style.display = 'flex';
@@ -79,11 +78,86 @@ function openForm(){
         form.style.display = 'none';
     }
 }
-function addNewTask(){
+
+//Data Base
+var dataBase = [];
+
+// New Task
+ function addNewTask(){
+    var tasks = document.createElement('div');
+    tasks.classList.add('tasks');
+    var taskTitle = document.getElementById('new-task').value;
+    var selectList = document.querySelector('#formList');
+    var indexList = selectList.selectedIndex;
+    var textList = selectList.options[indexList].text;
+    var taskList = textList;
+    var selectRepeat = document.querySelector('#formRepeat');
+    var indexRepeat = selectRepeat.selectedIndex;
+    var textRepeat = selectRepeat.options[indexRepeat].text;
+    var taskRepeat = textRepeat;
+    var clock = document.querySelector('#timer')
+    var formTimer = document.querySelector('#formTimer');
+    var timer = formTimer.value;
+    
+    tasks.innerHTML=`<i class="material-icons" id="radio">radio_button_unchecked</i>
+                    <div class="task">
+                        <h4>${taskTitle}</h4>
+                        <div class="info">
+                            <div class="list" id="${taskList}">
+                                <i class="material-icons" id="list-icon">code</i>
+                                <span id="list">${taskList}</span>
+                            </div>
+                            <p>-</p>
+                            <i class="material-icons" id="original-task-icon">task</i>
+                            <span id="original-task">Trabalho Figma</span>
+                            <p>-</p>
+                            <i class="material-icons" id="date-icon">date_range</i>
+                            <span id="date">${taskRepeat}</span>
+                            <p>-</p>
+                            <i class="material-icons" id="time-icon">schedule</i>
+                            <span class="time">14:30h</span>
+                        </div>
+                    </div>`
+
+    
+
+
+
+
+
+
+
+
+    
+    if (timer.length != ''){
+        tasks.innerHTML += `
+                            <div class="timer">
+                                <span id="countdown">${timer} min</span>
+                                <i class="material-icons" id="timer" onclick="countdownIn()">timer</i>
+                            </div>`
+    } else {
+        clock.style.display = 'none'
+    }
+    document.getElementById('allTasks').appendChild(tasks);
+    dataBase.push(tasks);
+    openForm();
 }
+
+//Update Screen
+
 function closeTask(){
     
     openForm();
+}
+
+//OpenTimerOption
+function openTimerOption(){
+    var formTimerOption = document.querySelector('#formAllTimer')
+    if (formTimerOption.style.display == 'none') {
+        formTimerOption.style.display = 'flex'
+    } else {
+        formTimerOption.style.display = 'none'
+    }
 }
 
 //Countdown
