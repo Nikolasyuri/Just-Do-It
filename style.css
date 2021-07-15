@@ -491,14 +491,13 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    height: 500px;
+    /* height: 500px; */
     transform: translate(-50%,-50%);
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255, 255, 255);
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(3px);
     border-radius: 6px;
     box-shadow: 5px 7px 10px #555;
     animation: opacityBtn 0.3s ease-in-out forwards;
@@ -549,6 +548,14 @@
 }
 .Section-Content .form fieldset #new-step ::placeholder{
     font-size: 14px;
+}
+.Section-Content .form fieldset #date-time{
+    display: flex;
+    padding: 20px 0;
+}
+.Section-Content .form fieldset #date-time #Data{}
+.Section-Content .form fieldset #date-time #timeto{
+    margin-left: 20px;
 }
 .Section-Content .form fieldset #select{
     display: flex;

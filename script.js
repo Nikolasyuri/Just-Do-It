@@ -98,6 +98,11 @@ var dataBase = [];
     var clock = document.querySelector('#timer')
     var formTimer = document.querySelector('#formTimer');
     var timer = formTimer.value;
+    var selectFormTime = document.querySelector('#formTime');
+    var indexFormTime = selectFormTime.selectedIndex;
+    var textTime = selectFormTime.options[indexFormTime].text;
+    var time = textTime;
+    
     
     tasks.innerHTML=`<i class="material-icons" id="radio">radio_button_unchecked</i>
                     <div class="task">
@@ -115,7 +120,7 @@ var dataBase = [];
                             <span id="date">${taskRepeat}</span>
                             <p>-</p>
                             <i class="material-icons" id="time-icon">schedule</i>
-                            <span class="time">14:30h</span>
+                            <span class="time">${time}</span>
                         </div>
                     </div>`
 
